@@ -10,7 +10,8 @@ dependencies:
     sdk: flutter
   d_plugin:
     git:
-      url: <repo-url>
+      url: https://github.com/DyrALT/d_plugin.git
+      ref: main
 ```
 
 ## usage
