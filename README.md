@@ -47,8 +47,15 @@ context.navigation.pop();
 `FadeInAnimation` Widget.
 
 ```dart
-const FadeInAnimation(
+const FadeAnimation(
   duration: Duration(milliseconds: 500),
   child: Text('Hello World'),
 )
+```
+
+`ContextExtension` Extension.
+
+```dart
+final height = context.height(0.3); // 30% of screen 
+final width = context.width(0.3); // 30% of screen width
 ```
