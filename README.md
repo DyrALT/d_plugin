@@ -56,6 +56,17 @@ const FadeAnimation(
 `ContextExtension` Extension.
 
 ```dart
-final height = context.height(0.3); // 30% of screen 
+final height = context.height(0.3); // 30% of screen height 
 final width = context.width(0.3); // 30% of screen width
+```
+
+`CubitMixin` Mixin.
+
+```dart
+class Example extends Cubit<ExampleState> with CubitMixin {
+  Example() : super(ExampleState());
+  void test() {
+    emit(state); // if cubit is closed return;
+  }
+}
 ```
