@@ -11,7 +11,7 @@ dependencies:
   d_plugin:
     git:
       url: https://github.com/DyrALT/d_plugin.git
-      ref: main
+      ref: master
 ```
 
 ## usage
