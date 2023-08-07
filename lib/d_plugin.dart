@@ -2,5 +2,6 @@
 library d_plugin;
 
 export 'src/cached_image/cached_image.dart';
+export 'src/extensions/context_extension.dart';
 export 'src/extensions/string_extenison.dart';
 export 'src/navigator/navigator_manager.dart';
