@@ -39,7 +39,7 @@ userEmail.isEmail; // true
 `NavigatorManager` Extension.
 
 ```dart
-context.pushNamed('/home');
-context.push(ExampleView());
-context.pop();
+context.navigation.pushNamed('/home');
+context.navigation.push(ExampleVie());
+context.navigation.pop();
 ```

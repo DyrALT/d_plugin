@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
 
-/// The code snippet is defining an extension called `NavigatorManager` on the `BuildContext` class in
-/// Flutter. This extension adds several methods that simplify navigation operations within a Flutter
-/// app.
-extension NavigatorManager on BuildContext {
+final class NavigatorManager {
+  NavigatorManager._();
+
+  factory NavigatorManager.of(BuildContext context) {
+    instance._context ??= context;
+    return instance;
+  }
+  BuildContext? _context;
+
+  static final instance = NavigatorManager._();
+
+  NavigatorState get _navigation {
+    if (_context == null) {
+      throw Exception('NavigatorManager is not initialized');
+    }
+    return Navigator.of(_context!);
+  }
+
   Future<T?> push<T extends Object?>(Widget page) {
-    return Navigator.of(this).push(
+    return _navigation.push(
       MaterialPageRoute(
         builder: (context) => page,
       ),
@@ -13,18 +27,18 @@ extension NavigatorManager on BuildContext {
   }
 
   void pop<T extends Object?>([T? result]) {
-    Navigator.of(this).pop(result);
+    _navigation.pop(result);
   }
 
   void popUntil(RoutePredicate predicate) {
-    Navigator.of(this).popUntil(predicate);
+    _navigation.popUntil(predicate);
   }
 
   Future<T?> pushReplacement<T extends Object?, TO extends Object?>(
     Widget page, {
     TO? result,
   }) {
-    return Navigator.of(this).pushReplacement(
+    return _navigation.pushReplacement(
       MaterialPageRoute(
         builder: (context) => page,
       ),
@@ -35,7 +49,7 @@ extension NavigatorManager on BuildContext {
   Future<T?> pushAndRemoveUntil<T extends Object?>(
     Widget page,
   ) {
-    return Navigator.of(this).pushAndRemoveUntil(
+    return _navigation.pushAndRemoveUntil(
       MaterialPageRoute(
         builder: (context) => page,
       ),
