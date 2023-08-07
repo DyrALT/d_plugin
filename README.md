@@ -43,3 +43,12 @@ context.navigation.pushNamed('/home');
 context.navigation.push(ExampleVie());
 context.navigation.pop();
 ```
+
+`FadeInAnimation` Widget.
+
+```dart
+const FadeInAnimation(
+  duration: Duration(milliseconds: 500),
+  child: Text('Hello World'),
+)
+```

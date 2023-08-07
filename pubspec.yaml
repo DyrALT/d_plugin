@@ -11,6 +11,7 @@ dependencies:
   cached_network_image: ^3.2.3
   flutter:
     sdk: flutter
+  simple_animations: ^5.0.2
 
 dev_dependencies:
   flutter_lints: ^2.0.0
