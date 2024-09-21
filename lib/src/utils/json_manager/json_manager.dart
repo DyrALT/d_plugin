@@ -45,7 +45,7 @@ abstract class JsonObject<T> {
     return '$runtimeType';
   }
 
-  Map<String, dynamic> toJson(T model) {
+  Map<String, dynamic> toJson() {
     return {};
   }
 
