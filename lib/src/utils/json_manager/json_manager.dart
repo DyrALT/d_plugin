@@ -1,7 +1,7 @@
 import 'package:d_plugin/src/utils/json_manager/json_manager_utils.dart';
 import 'package:flutter/widgets.dart';
 
-R? responseParser<I extends JsonObject<I>, R>(
+R? responseParser<I extends JsonObject, R>(
   dynamic response, {
   I? model,
 }) {
@@ -11,7 +11,7 @@ R? responseParser<I extends JsonObject<I>, R>(
   if (response is Map<String, dynamic>) {
     return model!.fromJson(response) as R;
   }
-
+  
   if (response is List) {
     return response
         .map((e) => model?.fromJson(e is Map<String, dynamic> ? e : {}))
@@ -23,7 +23,7 @@ R? responseParser<I extends JsonObject<I>, R>(
 }
 
 @immutable
-abstract class JsonObject<T> {
+abstract class JsonObject {
   List<Object?> get props;
 
   bool? get printProps => null;
@@ -49,7 +49,7 @@ abstract class JsonObject<T> {
     return {};
   }
 
-  T? fromJson(Map<String, dynamic> json) {
+  JsonObject? fromJson(Map<String, dynamic> json) {
     return null;
   }
 }

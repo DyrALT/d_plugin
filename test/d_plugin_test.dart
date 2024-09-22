@@ -21,11 +21,11 @@ void main() {
       model: User(),
     );
     
-    
+    print(x);
   });
 }
 
-class User extends JsonObject<User> {
+class User extends JsonObject {
   User({this.name});
   final String? name;
 
