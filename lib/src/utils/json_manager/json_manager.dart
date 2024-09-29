@@ -5,13 +5,16 @@ R? responseParser<I extends JsonObject, R>(
   dynamic response, {
   I? model,
 }) {
-  assert(response != null, 'response is null');
   assert(model != null, 'model is null');
+
+  if (response == null) {
+    return null;
+  }
 
   if (response is Map<String, dynamic>) {
     return model!.fromJson(response) as R;
   }
-  
+
   if (response is List) {
     return response
         .map((e) => model?.fromJson(e is Map<String, dynamic> ? e : {}))
