@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:d_plugin/d_plugin.dart';
 import 'package:flutter/widgets.dart';
 
-
 /// The code defines a class called `CachedImage` which extends `StatelessWidget`. The class has several
 /// properties including `imageUrl`, `fit`, `height`, `width`, `placeholder`, and `errorWidget`. These
 /// properties are used to configure the `CachedNetworkImage` widget.
@@ -10,6 +9,7 @@ import 'package:flutter/widgets.dart';
 final class CachedImage extends StatelessWidget {
   const CachedImage({
     required this.imageUrl,
+    this.alignment = Alignment.center,
     super.key,
     this.placeholder,
     this.errorWidget,
@@ -24,7 +24,7 @@ final class CachedImage extends StatelessWidget {
   final double? width;
   final Widget Function(BuildContext, String)? placeholder;
   final Widget Function(BuildContext, String, dynamic)? errorWidget;
-
+  final Alignment alignment;
   @override
   Widget build(BuildContext context) {
     if (!imageUrl.isUrl) {
@@ -40,6 +40,7 @@ final class CachedImage extends StatelessWidget {
       fit: fit,
       height: height,
       width: width,
+      alignment: alignment,
     );
   }
 }
