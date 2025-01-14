@@ -13,7 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_bloc: ^8.1.6
+  flutter_bloc: ^9.0.0
   simple_animations: ^5.0.2
 
 dev_dependencies:
