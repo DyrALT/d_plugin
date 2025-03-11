@@ -10,6 +10,12 @@ extension StringExtension on String? {
     return RegexConstants.isUrlRegex.hasMatch(this!);
   }
 
+  String? get extractUrl {
+    if (isNullOrEmpty) return null;
+    final match = RegexConstants.isUrlRegex.firstMatch(this!);
+    return match?.group(0);
+  }
+
   bool get isEmail {
     if (isNullOrEmpty) return false;
     return RegexConstants.isEmailRegex.hasMatch(this!);

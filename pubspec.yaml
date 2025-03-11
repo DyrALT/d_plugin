@@ -9,12 +9,12 @@ environment:
 
 dependencies:
 
-  cached_network_image: ^3.3.1
+  cached_network_image: ^3.4.1
   flutter:
     sdk: flutter
 
-  flutter_bloc: ^9.0.0
-  simple_animations: ^5.0.2
+  flutter_bloc: ^9.1.0
+  simple_animations: ^5.1.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0

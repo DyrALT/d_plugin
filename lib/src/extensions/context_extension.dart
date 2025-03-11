@@ -9,7 +9,7 @@ extension NavigatorMansager on BuildContext {
   /// Args:
   ///   value (double): The value is a double that represents the multiplier for the height of the
   /// screen.
-  double height(double value) => MediaQuery.of(this).size.height * value;
+  double height(double value) => MediaQuery.sizeOf(this).height * value;
 
   /// The function calculates the width of a widget based on a given value and the device's screen
   /// width.
@@ -17,5 +17,5 @@ extension NavigatorMansager on BuildContext {
   /// Args:
   ///   value (double): The value is a double that represents a multiplier for the width of the current
   /// device's screen.
-  double width(double value) => MediaQuery.of(this).size.width * value;
+  double width(double value) => MediaQuery.sizeOf(this).width * value;
 }
