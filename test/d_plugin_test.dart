@@ -1,8 +1,7 @@
 import 'dart:convert';
-import 'dart:math';
 
 import 'package:d_plugin/d_plugin.dart';
-import 'package:d_plugin/src/utils/json_manager/json_manager.dart';
+import 'package:d_plugin/src/extensions/value_notifier_extension.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -20,8 +19,14 @@ void main() {
       json.decode('{"name":"Dyr3"}'),
       model: User(),
     );
-    
+
     print(x);
+  });
+
+  test('Value Notifier', () {
+    final name = ''.valueNotifier;
+    final name2 = 2.valueNotifier;
+    final user = User(name: 'Dyr').valueNotifier;
   });
 }
 
